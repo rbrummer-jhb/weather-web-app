@@ -3,6 +3,7 @@ const path = require('path');
 const hbs = require('hbs');
 
 const app = express();
+const port = process.env.PORT || 5500;
 
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
@@ -20,8 +21,8 @@ hbs.registerPartials(partialsPath);
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-app.listen(5500, () => {
-    console.log('Server is up on port 5500.');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`);
 });
 
 app.get('', (req, res) => {
