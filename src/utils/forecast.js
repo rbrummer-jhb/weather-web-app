@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             callback(
                 undefined,
-                `It is currently ${body.main.temp} degrees out in ${body.name}`
+                `It is currently ${body.main.temp} degrees out in ${body.name}. The minimum temperature is ${body.main.temp_min}. The maximum temperature is ${body.main.temp_max}. Humidity is ${body.main.humidity}.`
             );
         }
     });
